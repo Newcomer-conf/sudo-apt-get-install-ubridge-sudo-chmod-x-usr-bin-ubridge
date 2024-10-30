@@ -235,7 +235,7 @@ else
 fi
 #Скрипт api-tes-t.py проверяет наличие шаблонов, YES или NO.
 #python3 auto_download.py -url "https://drive.google.com/uc?id=1U_jPEHi4GRW8xw0BdN5HgSsB6BlHjgZi"
-python3 auto_download.py -url "https://drive.google.com/uc?id=1e_b7m4R1lYQ_gHgD3GdF8Sl-O4U60NuT"
+python3 auto_download.py -url "https://drive.google.com/uc?id=1U_jPEHi4GRW8xw0BdN5HgSsB6BlHjgZi"
 
 # Загрузка api-im.py
 echo "Загрузка api-im.py..."
