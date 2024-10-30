@@ -31,11 +31,6 @@ fi
 echo "Обновление системы..."
 
 sudo bash -c 'echo -e "nameserver 8.8.8.8\nnameserver 8.8.4.4" >> /etc/resolv.conf'
-sudo iptables -F
-sudo iptables -X
-sudo iptables -P INPUT ACCEPT
-sudo iptables -P FORWARD ACCEPT
-sudo iptables -P OUTPUT ACCEPT
 
 sudo apt-get update
 if [ $? -ne 0 ]; then
