@@ -189,7 +189,7 @@ fi
 
 if [ ! -f "$ECO_FILE" ]; then
     sudo mkdir -p /home/$user/GNS3/images/QEMU
-    python3 auto_download.py -url "https://drive.google.com/uc?id=1akd88n_rD558GKZPiglBs13wFX5i2KMV" && sudo mv EcoRouter.qcow2 /home/$user/GNS3/images/QEMU/
+    python3 auto_download.py -url "https://drive.google.com/uc?id=1akd88n_rD558GKZPiglBs13wFX5i2KMV" && sudo cp  /home/$user/EcoRouter.qcow2 /home/$user/GNS3/images/QEMU/ && rm  /home/$user/EcoRouter.qcow2
     if [ $? -ne 0 ]; then
         errors+=("Ошибка при передаче образа EcoRouter.")
         echo -e "${RED}Ошибка при передаче образа EcoRouter.${NC}"
@@ -215,7 +215,7 @@ fi
 
 if [ ! -f "$ALT_FILE" ]; then
     sudo mkdir -p /home/$user/GNS3/images/QEMU
-    python3 auto_download.py -url "https://drive.google.com/uc?id=1BRbXMRJR_OlS3AoDjgEp-xT0vGonjlr6" && sudo mv alt.qcow2 /home/$user/GNS3/images/QEMU/
+    python3 auto_download.py -url "https://drive.google.com/uc?id=1BRbXMRJR_OlS3AoDjgEp-xT0vGonjlr6" && sudo cp  /home/$user/alt.qcow2 /home/$user/GNS3/images/QEMU/ && rm  /home/$user/alt.qcow2
     if [ $? -ne 0 ]; then
         errors+=("Ошибка при передаче образа ALT.")
         echo -e "${RED}Ошибка при передаче образа ALT.${NC}"
@@ -223,6 +223,8 @@ if [ ! -f "$ALT_FILE" ]; then
         echo -e "${GREEN}Образ ALT успешно передан.${NC}"
     fi
 fi
+
+
 
 
 # Загрузка EcoRouter.json
