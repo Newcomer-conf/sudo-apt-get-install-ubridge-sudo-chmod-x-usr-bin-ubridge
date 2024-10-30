@@ -1,13 +1,46 @@
-# 
-alt server 10
-1) su -
-2) echo "root    ALL=(ALL:ALL) ALL" >> /etc/sudoers
-3) echo "admin    ALL=(ALL:ALL) ALL" >> /etc/sudoers  (admin username)
+alt server gns3 auto install & auto config
+```
+su -
+```
 
-4) exit
-5) sudo apt-get update
-6) sudo apt-get install git -y
-7) sudo git clone https://github.com/Newcomer-conf/tes_789.git
-8) cp tes_789/auto-config-gns3-alt-server-10.sh /home/admin
-9) sudo rm -r  tes_789 
-10) sudo bash auto-config-gns3-alt-server-10.sh -u admin
+Переключается на пользователя root, загружая его окружение. Это позволяет выполнять команды с привилегиями суперпользователя.
+```
+echo "root ALL=(ALL:ALL) ALL" >> /etc/sudoers
+```
+Добавляет в файл /etc/sudoers строку, которая предоставляет пользователю root полные привилегии sudo. Однако пользователь root уже имеет эти привилегии по умолчанию, поэтому эта команда может быть избыточной.
+```
+echo "admin ALL=(ALL:ALL) ALL" >> /etc/sudoers (admin username)
+```
+Добавляет пользователя admin в файл /etc/sudoers, предоставляя ему полные привилегии sudo. Это позволяет пользователю admin выполнять команды от имени любого пользователя.
+```
+exit
+```
+Выходит из текущей сессии терминала или возвращается к предыдущему пользователю после команды su.
+```
+sudo apt-get update
+```
+Обновляет список доступных пакетов и их версий, но не устанавливает и не обновляет сами пакеты.
+```
+sudo apt-get install git -y
+```
+Устанавливает пакет git без запроса подтверждения у пользователя (-y отвечает "yes" автоматически).
+```
+sudo git clone https://github.com/Newcomer-conf/tes_789.git
+```
+Клонирует репозиторий tes_789 из GitHub в текущий каталог с привилегиями суперпользователя.
+```
+cp tes_789/auto-config-gns3-alt-server-10.sh /home/$user
+```
+
+Копирует скрипт auto-config-gns3-alt-server-10.sh из клонированного репозитория в домашний каталог пользователя admin.
+```
+sudo rm -r tes_789
+```
+
+Рекурсивно удаляет каталог tes_789 и все его содержимое с привилегиями суперпользователя.
+```
+sudo bash auto-config-gns3-alt-server-10.sh -u admin
+```
+
+Запускает скрипт auto-config-gns3-alt-server-10.sh с привилегиями суперпользователя, передавая ему аргумент -u admin (возможно, указывая пользователя для настроек).
+Важно: Будьте осторожны при изменении файла /etc/sudoers и предоставлении расширенных привилегий пользователям. Неправильная конфигурация может привести к потенциальным уязвимостям безопасности. Рекомендуется использовать команду visudo для редактирования этого файла, так как она выполняет синтаксическую проверку и предотвращает ошибки.
