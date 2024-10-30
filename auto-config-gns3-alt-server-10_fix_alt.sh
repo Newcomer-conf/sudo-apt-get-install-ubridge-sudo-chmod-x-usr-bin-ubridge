@@ -45,7 +45,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Установка необходимых пакетов
-packages=(ubridge curl vpcs git tmux sshpass docker-engine)
+packages=(ubridge qemu-system curl vpcs git tmux sshpass docker-engine)
 
 for package in "${packages[@]}"; do
     if rpm -q $package &> /dev/null; then
