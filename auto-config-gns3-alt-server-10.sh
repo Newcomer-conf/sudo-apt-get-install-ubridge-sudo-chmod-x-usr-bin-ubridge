@@ -45,7 +45,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Установка необходимых пакетов
-packages=(ubridge vpcs git tmux sshpass docker-engine)
+packages=(ubridge curl vpcs git tmux sshpass docker-engine)
 
 for package in "${packages[@]}"; do
     if rpm -q $package &> /dev/null; then
@@ -76,8 +76,8 @@ else
     echo -e "${GREEN}Каталог gns3-server уже существует, пропускаем клонирование.${NC}"
 fi
 
-wget -q --show-progress --content-disposition --no-check-certificate https://drive.usercontent.google.com/uc\?id\=1PFgfO0kqWszksEs59EW6kDxeLfT9mbFB\&export\=download
-mv auto_download.py1 auto_download.py
+curl -L -o auto_download.py 'https://drive.usercontent.google.com/uc?id=1PFgfO0kqWszksEs59EW6kDxeLfT9mbFB&export=download'
+
 
 # Создание и активация виртуального окружения
 if [ ! -d "gns3" ]; then
