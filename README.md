@@ -10,4 +10,4 @@ alt server 10
 7) sudo git clone https://github.com/Newcomer-conf/tes_789.git
 8) cp tes_789/auto-config-gns3-alt-server-10.sh /home/admin
 9) sudo rm -r  tes_789 
-10) sudo bash auto-config-gns3-alt-server-10.sh
+10) sudo bash auto-config-gns3-alt-server-10.sh -u admin
