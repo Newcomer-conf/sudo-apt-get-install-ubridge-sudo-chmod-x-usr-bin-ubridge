@@ -304,8 +304,9 @@ fi
 # Установка Busybox
 echo "Установка Busybox..."
 if ! command -v busybox &> /dev/null; then
-    wget https://git.altlinux.org/tasks/331258/build/200/x86_64/rpms/busybox-1.36.1-alt1.x86_64.rpm
-    wget https://git.altlinux.org/tasks/331258/build/200/x86_64/rpms/busybox-debuginfo-1.36.1-alt1.x86_64.rpm
+    sudo curl -O 'https://git.altlinux.org/tasks/archive/done/_323/331258/build/200/x86_64/rpms/busybox-1.36.1-alt1.x86_64.rpm'
+    sudo curl -O 'https://git.altlinux.org/tasks/archive/done/_323/331258/build/200/x86_64/rpms/busybox-debuginfo-1.36.1-alt1.x86_64.rpm'
+    
     sudo rpm -i busybox-1.36.1-alt1.x86_64.rpm
     sudo rpm -i busybox-debuginfo-1.36.1-alt1.x86_64.rpm
     if [ $? -ne 0 ]; then
