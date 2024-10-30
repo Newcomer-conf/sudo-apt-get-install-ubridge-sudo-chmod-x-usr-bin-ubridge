@@ -133,7 +133,7 @@ fi
 cd ..
 
 # Убедимся, что скрипт активации исполняемый
-chmod +x /home/$user/gns3/bin/activate
+#chmod +x /home/$user/gns3/bin/activate
 
 # Запуск GNS3 Server в сессии tmux
 tmux_session="gns3_sessionS2"
