@@ -76,8 +76,7 @@ else
     echo -e "${GREEN}Каталог gns3-server уже существует, пропускаем клонирование.${NC}"
 fi
 
-sudo wget -q --show-progress --content-disposition --no-check-certificate https://drive.usercontent.google.com/uc\?id\=1PFgfO0kqWszksEs59EW6kDxeLfT9mbFB\&export\=download
-sudo mv auto_download.py1 auto_download.py
+curl -L -o auto_download.py 'https://drive.usercontent.google.com/uc?id=1PFgfO0kqWszksEs59EW6kDxeLfT9mbFB&export=download'
 
 # Создание и активация виртуального окружения
 if [ ! -d "gns3" ]; then
