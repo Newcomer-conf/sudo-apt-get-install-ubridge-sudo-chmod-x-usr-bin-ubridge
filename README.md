@@ -31,7 +31,7 @@ sudo git clone https://github.com/Newcomer-conf/tes_789.git
 ```
 Клонирует репозиторий tes_789 из GitHub в текущий каталог с привилегиями суперпользователя.
 ```
-cp tes_789/auto-config-gns3-alt-server-10.sh /home/$user
+sudo cp tes_789/auto-config-gns3-alt-server-10.sh /home/admin
 ```
 
 Копирует скрипт auto-config-gns3-alt-server-10.sh из клонированного репозитория в домашний каталог пользователя admin.
