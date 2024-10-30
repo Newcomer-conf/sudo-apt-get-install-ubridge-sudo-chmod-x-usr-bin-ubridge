@@ -9,8 +9,10 @@ echo "root ALL=(ALL:ALL) ALL" >> /etc/sudoers
 ```
 Добавляет в файл /etc/sudoers строку, которая предоставляет пользователю root полные привилегии sudo. Однако пользователь root уже имеет эти привилегии по умолчанию, поэтому эта команда может быть избыточной.
 ```
-echo "admin ALL=(ALL:ALL) ALL" >> /etc/sudoers (admin username)
+echo "admin ALL=(ALL:ALL) ALL" >> /etc/sudoers
 ```
+(admin username)
+
 Добавляет пользователя admin в файл /etc/sudoers, предоставляя ему полные привилегии sudo. Это позволяет пользователю admin выполнять команды от имени любого пользователя.
 ```
 exit
