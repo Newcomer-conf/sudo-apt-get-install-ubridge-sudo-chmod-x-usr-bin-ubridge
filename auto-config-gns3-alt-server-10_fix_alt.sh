@@ -360,7 +360,7 @@ for interface in $interfaces; do
     if [ -n "$ip_addr" ]; then
         echo "$interface: $ip_addr"
         echo "GNS3 Server доступен по адресу: http://$ip_addr:3080"
-        echo "И можно так ssh -L 3080:127.0.0.1:3080 {user_name}@{ip_addr_server} -i {'ssh_key'}
+        echo "И можно так ssh -L 3080:127.0.0.1:3080 {user_name}@{ip_addr_server} -i {'ssh_key'}"
     fi
 done
 
